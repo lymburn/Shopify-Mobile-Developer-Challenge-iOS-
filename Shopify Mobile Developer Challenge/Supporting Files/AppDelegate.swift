@@ -9,13 +9,20 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UICollectionViewDelegateFlowLayout {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow()
+        let layout = UICollectionViewFlowLayout()
+        let nav = UINavigationController(rootViewController: CollectionViewController(collectionViewLayout: layout))
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
